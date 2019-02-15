@@ -421,9 +421,6 @@ c     &           igino,ut0
 
         save
 ! --- buffer initialization  (Michael Hirsch, SciVision, Inc. ---  
-      datadir1 = datadir
-      call read_ig_rz
-      call readapf107
 ! -- end buffer init
 
         mess=jf(34)

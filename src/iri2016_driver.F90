@@ -14,6 +14,8 @@ real::  TECtotal, TECtop, TECbot
 #define BIN_DIR '.'
 #endif
 character(*), parameter :: datadir = BIN_DIR // '/../iri2016/data'
+character(256) :: datadir1
+common /folders/ datadir1
 
 
 real :: oarr(100), outf(20,1000)
@@ -24,6 +26,7 @@ integer :: i
 jf = .true.
 jf(4:6) = .false.
 jf(22:23) = .false.
+jf(25) = .false.
 jf(26) = .false.
 jf(28:30) = .false.
 jf(33:35) = .false.
@@ -64,6 +67,9 @@ iyyyy = ymdhms(1)
 mmdd = ymdhms(2) * 100 + ymdhms(3)
 dhour = ymdhms(4) + ymdhms(5) / 60. + ymdhms(6) / 3600.
 
+datadir1 = datadir
+call read_ig_rz
+call readapf107
 
 call IRI_SUB(JF,JMAG,glat,glon,IYYYY,MMDD,DHOUR+25., &
      alt_km_range(1), alt_km_range(2), alt_km_range(3), &
