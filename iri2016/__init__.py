@@ -74,7 +74,10 @@ def IRI(time: datetime, altkmrange: Sequence[float],
     for i, p in enumerate(['NmF2', 'hmF2', 'NmF1', 'hmF1', 'NmE', 'hmE']):
         iono[p] = (('time'), [arr[i]])
 
+    iono['M300F2'] = (('time'), [arr[35]])
     iono['TEC'] = (('time'), [arr[36]])
+    iono['FoF2'] = math.sqrt(iono['NmF2'] / 1.24e10)
+
     iono['EqVertIonDrift'] = (('time'), [arr[43]])
 
     return iono
