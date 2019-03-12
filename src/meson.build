@@ -13,6 +13,10 @@ map = executable('irimap', 'irimap.F90',
   link_with: iri2016,
   fortran_args: '-DBIN_DIR='+ '"' + meson.build_root() + '"')
 
+ts = executable('iri_ts', 'iri_ts.F90',
+  link_with: iri2016,
+  fortran_args: '-DBIN_DIR='+ '"' + meson.build_root() + '"')
+
 testexe = executable('testiri2016', 'test.f90',
   link_with: iri2016)
  
