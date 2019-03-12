@@ -24,8 +24,7 @@ integer :: i
 
 jf = .true.
 jf(4:6) = .false.
-jf(22:23) = .false.
-jf(26) = .false.
+jf(21:23) = .false.
 jf(28:30) = .false.
 jf(33:35) = .false.
 
@@ -54,7 +53,7 @@ do glat=-90,90
       0, 0, 1, &
       OUTF,OARR, datadir)
  
-    write(stdout, '(6ES16.8)') glat, glon, oarr(1), sqrt(oarr(1) / 1.24E10), oarr(36), oarr(36) * sqrt(oarr(1) / 1.24E10)
+    write(stdout, '(6ES16.8)') glat, glon, oarr(1), oarr(89), oarr(36), oarr(36) * oarr(89)
   enddo
 enddo
 

@@ -2250,6 +2250,7 @@ c include only every second auroral boundary point (MLT=0,1,2..23)
       OARR(86)=dimo
       OARR(87)=SAX300
       OARR(88)=SUX300
+      OARR(89)=fof2s
 3330  CONTINUE
 
 c output of solar indices used
